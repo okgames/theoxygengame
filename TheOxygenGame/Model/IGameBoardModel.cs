@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace TheOxygenGame.Model
 {
-    public interface IGameBoardModel
+    public interface IGameBoardModel<T>
     {
-        ICollection<ICollection<int>> GameBoard { get; }
+        T this[int x, int y] { get; }
+        event EventHandler<IGameBoardModel<T>> StateChanged;
+        int Width { get; }
+        int Height { get; }
+
 
         void Merge(string direction);
         bool MoveAvailable();

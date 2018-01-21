@@ -1,12 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject>TheOxygenGame.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Services\" />
-    <Folder Include="View\" />
   </ItemGroup>
 
 </Project>

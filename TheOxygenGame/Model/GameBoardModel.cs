@@ -10,11 +10,12 @@ namespace TheOxygenGame.Model
         public int Width => throw new NotImplementedException();
         public int Height => throw new NotImplementedException();
 
-        public void Merge(string direction)
+        public void Move(string direction)
         {
             throw new NotImplementedException();
         }
-        public bool MoveAvailable()
+
+        public bool MovePossible()
         {
             throw new NotImplementedException();
         }

@@ -5,11 +5,11 @@ using TheOxygenGame.Model;
 
 namespace TheOxygenGame.Controller
 {
-    public class GameBoardController
+    public class GameBoardController<T>
     {
-        private IGameBoardModel<int> _gameBoard;
+        private IGameBoardModel<T> _gameBoard;
 
-        public GameBoardController(IGameBoardModel<int> gameBoard)
+        public GameBoardController(IGameBoardModel<T> gameBoard)
         {
             _gameBoard = gameBoard;            
         }
@@ -17,6 +17,6 @@ namespace TheOxygenGame.Controller
         public void GameKeyPressed()
         {
             throw new NotImplementedException();
-        }        
+        }
     }
 }

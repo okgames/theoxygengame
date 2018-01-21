@@ -9,7 +9,7 @@ namespace TheOxygenGame.Model
         public T this[int x, int y] => throw new NotImplementedException();
         public int Width => throw new NotImplementedException();
         public int Height => throw new NotImplementedException();
-        public event EventHandler<IGameBoardModel<T>> StateChanged;
+
         public void Merge(string direction)
         {
             throw new NotImplementedException();

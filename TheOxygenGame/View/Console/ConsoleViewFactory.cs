@@ -5,15 +5,15 @@ using TheOxygenGame.Model;
 
 namespace TheOxygenGame.View.Console
 {
-    public class ConsoleViewFactory : ViewFactory
+    public class ConsoleViewFactory : IViewFactory
     {        
         
-        public override IView<IGameBoardModel<T>> GameboardView<T>()
+        public IView<IGameBoardModel<T>> GameboardView<T>()
         {
             return new GameboardView<T>();
         }
 
-        public override IView<string> MessageView()
+        public IView<string> MessageView()
         {
             return new MessageView();
         }

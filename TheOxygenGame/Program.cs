@@ -4,6 +4,7 @@ using System.Text;
 using TheOxygenGame.View;
 using TheOxygenGame.Model;
 using TheOxygenGame.Controller;
+using TheOxygenGame.View.Console;
 
 namespace TheOxygenGame
 {
@@ -11,10 +12,13 @@ namespace TheOxygenGame
     { 
         public static int Main(string[] args)
         {
-            var gameBoard = new GameBoardModel<int?>();
-            var view = new ConsoleView<int?>();
-            var controller = new GameBoardController<int?>(gameBoard);
-            
+            var gameBoard = new GameBoardModel();
+            var viewFactory = new ConsoleViewFactory();
+            var controller = new GameBoardController<int?>(gameBoard, viewFactory);
+            while (true)
+            {
+                controller.GameKeyPressed(Console.ReadKey().Key);
+            }
             return 0;
         }    
     }

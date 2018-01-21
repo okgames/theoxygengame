@@ -16,6 +16,7 @@ namespace TheOxygenGame.Controller
         {
             _gameBoard = gameBoard;
             _viewFactory = viewFactory;
+            _viewFactory.GameboardView<T>().Display(gameBoard);
         }        
 
         public void GameKeyPressed(ConsoleKey key)

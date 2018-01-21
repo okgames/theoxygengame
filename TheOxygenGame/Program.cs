@@ -15,9 +15,10 @@ namespace TheOxygenGame
             var gameBoard = new GameBoardModel();
             var viewFactory = new ConsoleViewFactory();
             var controller = new GameBoardController<int?>(gameBoard, viewFactory);
+            Console.CursorVisible = false;
             while (true)
             {
-                controller.GameKeyPressed(Console.ReadKey().Key);
+                controller.GameKeyPressed(Console.ReadKey(true).Key);
             }
             return 0;
         }    

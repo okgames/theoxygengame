@@ -9,7 +9,7 @@ namespace TheOxygenGame.Model
         int Width { get; }
         int Height { get; }
 
-        void Move(string direction);
+        void Move(Direction direction);
         bool MovePossible();
     }
 }

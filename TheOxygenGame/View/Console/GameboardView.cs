@@ -9,6 +9,22 @@ namespace TheOxygenGame.View.Console
 {
     public class GameboardView<T> : IView<IGameBoardModel<T>>
     {
+        private static Dictionary<string, string> map = new Dictionary<string, string>()
+        {
+            { "X", "#" },
+            { "2", "H" },
+            { "4", "He" },
+            { "8", "Li" },
+            { "16", "Be" },
+            { "32", "B" },
+            { "64", "N" },
+            { "128", "O" },
+            { "256", "F" },
+            { "512", "Ne" },
+            { "1024", "Na" },
+            { "2048", "Mg" }
+        };
+
         public void Display(IGameBoardModel<T> gameboard)
         {
             Clear();
@@ -16,7 +32,13 @@ namespace TheOxygenGame.View.Console
             {
                 for (int x = 0; x < gameboard.Height; x++)
                 {
-                    Write(string.Format("{0}\t", gameboard[y, x]?.ToString() ?? "X"));
+                    var z = gameboard[y, x]?.ToString() ?? "X";
+                    var h = "";
+                    if (map.TryGetValue(z, out h))
+                    {
+                        z = h;
+                    }
+                    Write(string.Format("{0}\t", h));
                 }
                 Write(NewLine + NewLine + NewLine);
             }
